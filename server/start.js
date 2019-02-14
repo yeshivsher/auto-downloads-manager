@@ -1,6 +1,6 @@
 const child_process = require('child_process');
 
-var subp = child_process.spawn('python', ['TorrentDownloader/main.py', '-e', 'the walking Dead', 1, 1]);
+var subp = child_process.spawn('python', ['torrent downloader/main.py', '-e', 'the walking Dead', 1, 1]);
 
 subp.stdout
   .on('data', (data) => {
