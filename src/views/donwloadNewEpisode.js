@@ -6,8 +6,8 @@ import runPY from '../server/start'
 class DownloadNewEpisode extends Component {
   state = {
     seriesName: '',
-    season: null,
-    episode: null,
+    season: '',
+    episode: '',
   };
 
   handleChange = name => event => {
@@ -17,7 +17,23 @@ class DownloadNewEpisode extends Component {
   startTrack = () => {
     const { seriesName, season, episode } = this.state;
     if (seriesName && season && episode && season > 0 && episode > 0) {
-      runPY(seriesName, season, episode);
+      let logres
+      const url = 'http://localhost:8080/runpy'
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({srsName: seriesName, season: season, episode: episode})
+      }).then((result) => {
+        logres = result
+      }, (err) => {
+        console.error(err)
+      })
+    
+      //runPY(seriesName, season, episode);
+      console.log(logres)
     }
   }
 
@@ -32,6 +48,7 @@ class DownloadNewEpisode extends Component {
               <Grid container alignItems='center'>
                 <Grid item xs={3}>
                   <TextField
+                    onChange={this.handleChange('seriesName')}
                     id='soldier-id-txtbox'
                     label='שם סדרה'
                     margin='normal'

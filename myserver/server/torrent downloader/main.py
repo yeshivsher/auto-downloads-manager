@@ -65,7 +65,8 @@ def main():
         print("    -e (show name) (series number) (episode number)")
         return
  
-
+    print("started!")
+    print(sys.argv)
     option = sys.argv[1]
 
     if option == "-m":
@@ -75,6 +76,6 @@ def main():
     else:
         print(f"Unrecognized flag '{option}'")
 
-
+print("hello world")
 if __name__ == '__main__':
     main()
