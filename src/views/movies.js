@@ -41,6 +41,8 @@ const data = [
 
 const options = {
   filterType: 'checkbox',
+  print: false,
+  download: false,
 }
 
 const NewUsersPage = props => {

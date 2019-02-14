@@ -6,6 +6,8 @@ import AppBar from './AppBar'
 import { Grid, withStyles } from '@material-ui/core'
 
 import NewUsers from '../NewUsers/new-users'
+
+import DownloadNewEpisode from '../views/donwloadNewEpisode'
 import tvShows from '../views/tvShows'
 import movies from '../views/movies'
 import music from '../views/music'
@@ -23,6 +25,12 @@ const routes = [
     path: 'NewUsers',
     component: NewUsers,
     title: 'משתמש חדש',
+    icon: 'supervised_user_circle',
+  },
+  {
+    path: 'DownloadNewEpisode',
+    component: DownloadNewEpisode,
+    title: 'הורדת פרק',
     icon: 'supervised_user_circle',
   },
   {
