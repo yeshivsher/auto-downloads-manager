@@ -21,17 +21,17 @@ const routes = [
   //   title: 'משתמשים',
   //   icon: 'verified_user',
   // },
-  {
-    path: 'NewUsers',
-    component: NewUsers,
-    title: 'משתמש חדש',
-    icon: 'supervised_user_circle',
-  },
+  // {
+  //   path: 'NewUsers', 
+  //   component: NewUsers,
+  //   title: 'משתמש חדש',
+  //   icon: 'supervised_user_circle',
+  // },
   {
     path: 'DownloadNewEpisode',
     component: DownloadNewEpisode,
-    title: 'הורדת פרק',
-    icon: 'supervised_user_circle',
+    title: 'מעקב סדרה',
+    icon: 'linear_scale',
   },
   {
     path: 'tvShow',
@@ -68,9 +68,6 @@ const MainRouter = (props) => {
         <Grid item xs={2} className={classes.sideBar}>
           <SideBar routes={routes} />
         </Grid>
-        {/* <Grid item xs={10} className={classes.AppBar}>
-          <AppBar routes={routes} />
-        </Grid> */}
         <Grid item xs={10} className={classes.content}>
           <Switch>
             {routes.map((route, index) => (
@@ -102,8 +99,9 @@ const styles = theme => ({
     height: '100vh',
   },
   content: {
-    height: '100vh',
-    padding: '5vh 5vw 0 5vw'
+    height: '100%',
+    width: '100%',
+    padding: '20px'
   }
 })
 
